@@ -36,6 +36,18 @@ No. `git commit` es una operación 100% local. Internet (GitHub) solo entra cuan
 **Cerré la terminal / apagué mi computadora. ¿Perdí mi trabajo?**
 No. La terminal es solo la ventana desde la que escribes comandos — no es donde vive nada. Tu trabajo está guardado en archivos reales dentro de la carpeta oculta `.git` de tu proyecto, de forma permanente, igual que cualquier otro archivo en tu computadora. Vuelve a la carpeta (`cd ruta/a/tu/carpeta`) y sigue donde ibas.
 
+**Para usar `git log`, `git shortlog`, etc., ¿primero tengo que "conectarme" al repositorio compartido?**
+No existe un paso de "conexión" en Git — es un supuesto natural si vienes de bases de datos o sistemas cliente-servidor, pero no aplica aquí. Cuando hiciste `git clone`, tu computadora descargó una **copia completa** del repositorio, con todo su historial — no una ventana hacia él. `git log`, `git shortlog -sn` y `git log --stat` simplemente leen esa copia local; no hablan con GitHub en absoluto.
+
+Lo que sí importa es que esa copia esté **actualizada**. Si no has sincronizado recientemente, tu historial local no va a incluir lo que tus compañeros subieron y fusionaron después de tu último `pull` — no por falta de "conexión", sino porque tu copia quedó desactualizada. Antes de analizar autoría, refresca primero:
+```bash
+git checkout main
+git pull
+git log --author="Nombre de un compañero"
+git shortlog -sn
+```
+Nota: `--author="Nombre"` busca coincidencia exacta con el nombre que cada quien configuró en `git config --global user.name` — si alguien usó un apodo, no lo va a encontrar. Confirma primero los nombres reales con `git shortlog -sn`.
+
 **¿Cuál es la diferencia entre Git y GitHub, otra vez?**
 Git es el programa de control de versiones — vive en tu computadora, funciona sin internet. GitHub es una plataforma web que aloja repositorios de Git y agrega colaboración (Pull Requests, revisión de código). Puedes usar Git toda tu vida sin tocar GitHub jamás.
 
