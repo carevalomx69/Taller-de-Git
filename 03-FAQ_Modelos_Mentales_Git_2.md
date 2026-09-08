@@ -169,7 +169,7 @@ Porque `main` debe representar siempre una versión estable y funcional. Si todo
 Dos razones: (1) fuerza a que al menos otra persona del equipo entienda cada parte del código, no solo quien lo escribió — esto es, de hecho, la mejor defensa contra que "solo uno o dos programen y los demás ayuden"; (2) crea un registro permanente de qué se revisó, cuándo, y quién lo aprobó.
 
 **¿Por qué la Retrospectiva y el Daily Scrum no viven dentro de ninguna herramienta (ni Git ni Jira)?**
-Porque son conversaciones humanas de coordinación y mejora — las herramientas registran QUÉ se hizo, no reemplazan la conversación de CÓMO se está trabajando como equipo. Confundir "reunión registrada en una app" con "reunión que realmente pasó" es un error común en equipos que apenas empiezan con metodologías ágiles.
+Porque son conversaciones humanas de coordinación y mejora. Las herramientas registran QUÉ se hizo, no reemplazan la conversación de CÓMO se está trabajando como equipo. Confundir "reunión registrada en una app" con "reunión que realmente pasó" es un error común en equipos que apenas empiezan con metodologías ágiles.
 
 ---
 
