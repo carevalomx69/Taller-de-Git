@@ -89,6 +89,19 @@ git merge main
 **¿Qué tan grande debe ser un Pull Request?**
 Pequeño y frecuente. Un PR de 500 líneas casi nadie lo revisa con cuidado real; uno de 20-50 líneas sí. Como beneficio adicional, PRs chicos y frecuentes te dan más historial real para la trazabilidad de autoría del equipo.
 
+**Me toca revisar el Pull Request de un compañero. ¿Cómo lo hago — hay que descargar la rama primero?**
+Depende de qué tan a fondo necesites revisarlo — hay dos caminos:
+
+- **Revisión directa en GitHub, sin descargar nada (la más común):** dentro del Pull Request, la pestaña **"Files changed"** muestra el diff completo, línea por línea, en el navegador. Ahí puedes comentar líneas específicas y aprobar o solicitar cambios. Para cambios sencillos (la mayoría de los del taller), esto basta — no necesitas correr el código para saber si se ve bien.
+- **Bajar la rama a tu computadora (cuando necesitas *ejecutar* el código, no solo leerlo):**
+  ```bash
+  git fetch origin
+  git checkout nombre-de-la-rama
+  ```
+  `git fetch` trae la información de la rama sin mezclarla con tu trabajo actual (a diferencia de `git pull`, que además intenta fusionar). `git checkout` te cambia a ella — Git detecta sola que existe en el remoto y crea tu copia local automáticamente. Ya ahí, corre el proyecto de verdad antes de aprobar. Para regresar a lo tuyo: `git checkout main` (o tu propia rama).
+
+Regla práctica: si el cambio se entiende con solo leerlo, revisión en GitHub basta; si quieres probar que de verdad funciona, baja la rama.
+
 **¿Qué hago con mi rama después de que se fusiona?**
 Bórrala — en GitHub (botón "Delete branch" que aparece justo después del merge) y localmente:
 ```bash
