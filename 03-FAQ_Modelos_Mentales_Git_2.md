@@ -1,7 +1,7 @@
 # Preguntas Frecuentes y Modelos Mentales
 ### Taller de Git — tarjeta de referencia rápida
 
-Este documento no enseña comandos paso a paso (eso vive en la Guía de Laboratorio y en las Tarjetas de Tarea) — está pensado para consultarse cuando te surge una duda de "¿por qué funciona así?" o "¿qué se supone que debo hacer aquí?". Tenlo a la mano durante todo el taller, especialmente en la Sesión 4.
+Este documento no enseña comandos paso a paso (eso vive en la Guía de Laboratorio y en las Tarjetas de Tarea), está pensado para consultarse cuando te surge una duda de "¿por qué funciona así?" o "¿qué se supone que debo hacer aquí?". Tenlo a la mano durante todo el taller, especialmente en la Sesión 4.
 
 ---
 
@@ -24,7 +24,7 @@ El flujo correcto, siempre:
 8. vuelve al paso 1 antes de tu siguiente tarea
 ```
 
-No hay un "líder" con permiso especial de hacer merge — la revisión es entre compañeros, rotando, igual que el espíritu auto-organizado de un equipo Scrum.
+No hay un "líder" con permiso especial de hacer merge. La revisión es entre compañeros, rotando, igual que el espíritu auto-organizado de un equipo Scrum.
 
 ---
 
@@ -34,10 +34,10 @@ No hay un "líder" con permiso especial de hacer merge — la revisión es entre
 No. `git commit` es una operación 100% local. Internet (GitHub) solo entra cuando quieres respaldar o compartir tu trabajo con `git push`.
 
 **Cerré la terminal / apagué mi computadora. ¿Perdí mi trabajo?**
-No. La terminal es solo la ventana desde la que escribes comandos — no es donde vive nada. Tu trabajo está guardado en archivos reales dentro de la carpeta oculta `.git` de tu proyecto, de forma permanente, igual que cualquier otro archivo en tu computadora. Vuelve a la carpeta (`cd ruta/a/tu/carpeta`) y sigue donde ibas.
+No. La terminal es solo la ventana desde la que escribes comandos, no es donde vive nada. Tu trabajo está guardado en archivos reales dentro de la carpeta oculta `.git` de tu proyecto, de forma permanente, igual que cualquier otro archivo en tu computadora. Vuelve a la carpeta (`cd ruta/a/tu/carpeta`) y sigue donde ibas.
 
 **Para usar `git log`, `git shortlog`, etc., ¿primero tengo que "conectarme" al repositorio compartido?**
-No existe un paso de "conexión" en Git — es un supuesto natural si vienes de bases de datos o sistemas cliente-servidor, pero no aplica aquí. Cuando hiciste `git clone`, tu computadora descargó una **copia completa** del repositorio, con todo su historial — no una ventana hacia él. `git log`, `git shortlog -sn` y `git log --stat` simplemente leen esa copia local; no hablan con GitHub en absoluto.
+No existe un paso de "conexión" en Git. Es un supuesto natural si vienes de bases de datos o sistemas cliente-servidor, pero no aplica aquí. Cuando hiciste `git clone`, tu computadora descargó una **copia completa** del repositorio, con todo su historial — no una ventana hacia él. `git log`, `git shortlog -sn` y `git log --stat` simplemente leen esa copia local; no hablan con GitHub en absoluto.
 
 Lo que sí importa es que esa copia esté **actualizada**. Si no has sincronizado recientemente, tu historial local no va a incluir lo que tus compañeros subieron y fusionaron después de tu último `pull` — no por falta de "conexión", sino porque tu copia quedó desactualizada. Antes de analizar autoría, refresca primero:
 ```bash
