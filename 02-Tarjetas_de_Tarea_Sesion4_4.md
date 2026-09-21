@@ -15,7 +15,7 @@ git commit -m "Agrega archivos iniciales del proyecto de práctica"
 git push
 ```
 
-**Por qué importa usar un solo método para esto:** subir archivos por arrastrar y soltar en la web SÍ crea un commit real — tan válido como uno hecho por terminal — pero tu Git local no se entera de que ese commit existe. La siguiente vez que intentes hacer `git push`, GitHub lo va a rechazar (`! [rejected] main -> main (fetch first)`), porque tu copia local y el repositorio remoto avanzaron por caminos separados sin sincronizarse. Usa terminal de principio a fin para esta configuración inicial, y el problema no aparece.
+**Por qué importa usar un solo método para esto:** subir archivos por arrastrar y soltar en la web SÍ crea un commit real, tan válido como uno hecho por terminal, pero tu Git local no se entera de que ese commit existe. La siguiente vez que intentes hacer `git push`, GitHub lo va a rechazar (`! [rejected] main -> main (fetch first)`), porque tu copia local y el repositorio remoto avanzaron por caminos separados sin sincronizarse. Usa terminal de principio a fin para esta configuración inicial, y el problema no aparece.
 
 3. Agrega un archivo `.gitattributes` para evitar problemas de finales de línea entre compañeros que usen Windows y compañeros que usen Mac (ver la nota de la Sesión 3 si no recuerdas de qué se trata):
 
@@ -36,7 +36,7 @@ cd NOMBRE-DEL-REPO
 
 ---
 
-## Antes de CADA tarea (esto se repite todo el semestre — no es parte de la configuración inicial)
+## Antes de CADA tarea (esto se repite todo el semestre. No es parte de la configuración inicial)
 
 `git clone` solo trae el repositorio la primera vez. Pero tus compañeros van a seguir subiendo trabajo nuevo a `main` mientras tú avanzas en la tuya — si no vuelves a sincronizar, tu punto de partida se queda "congelado" en el día que clonaste, y cualquier rama nueva que crees a partir de ahí nace desactualizada.
 
