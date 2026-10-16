@@ -4,7 +4,32 @@ Material completo del taller de Git trabajado en clase: control de versiones, ra
 
 ## Resumen visual del flujo de trabajo
 
-![Diagrama de flujo del ciclo de Git](05-Diagrama%20de%20flujo%20ciclo%20Git.png)
+```mermaid
+%%{init: {'theme': 'neutral'}}%%
+flowchart TB
+    INI["Una sola vez:<br/>crea el repo en GitHub<br/>y haz git clone"]
+
+    subgraph LOCAL["En tu computadora: prepara tu rama y trabaja"]
+        direction LR
+        P1["<b>1.</b> Actualiza main<br/>git checkout main<br/>git pull origin main"]
+        P2["<b>2.</b> Crea tu rama<br/>git checkout -b<br/>feature/mi-tarea"]
+        P3["<b>3.</b> Escribe código<br/>(trabaja en tu tarea)"]
+        P4["<b>4.</b> Prepara cambios<br/>git add ."]
+        P1 --> P2 --> P3 --> P4
+    end
+
+    subgraph ENTREGA["Entrega: commit, push y revisión en GitHub"]
+        direction LR
+        P5["<b>5.</b> Guarda el avance<br/>git commit -m 'Mensaje'"]
+        P6["<b>6.</b> Sube tu rama<br/>git push origin<br/>feature/mi-tarea"]
+        P7["<b>7.</b> Abre un<br/>Pull Request<br/>en GitHub"]
+        P8["<b>8.</b> Revisión de un<br/>compañero y merge a main<br/><i>Siguiente tarea: vuelve al paso 1</i>"]
+        P5 --> P6 --> P7 --> P8
+    end
+
+    INI --> LOCAL
+    LOCAL --> ENTREGA
+```
 
 Este es el ciclo que vas a repetir para cada tarea, del inicio a fin del semestre: partir de `main` actualizado, crear tu rama, trabajar, subir tu rama (nunca `main` directamente), y fusionar vía Pull Request con revisión de un compañero.
 
